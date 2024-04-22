@@ -1,39 +1,47 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Skapade en constrainlayout och sedan la jag in text som jag positionerade med hjälp av
+constraints, t.ex "layout_constraintStart_toEndOf"
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Under "Registrera dig" finns det ett "formulär" som egentligen bara har en fråga. formuläret ligger i
+en egen constraintlayout.
 
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+Positioneringen av mina element gjorde jag med hjälp av constraints samt margins.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+Här är koden för min nestlade constraintlayout.
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/form"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/form_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+---
+
+Här är koden jag använde för att göra en radiobutton.
+
+<RadioGroup
+            android:id="@+id/radio_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/textView4"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal">
+
+            <RadioButton android:id="@+id/radio_man"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Man" />
+
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
-
-![](android.png)
+![](assignment3sc.png)
 
 Läs gärna:
 
