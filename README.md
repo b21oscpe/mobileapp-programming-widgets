@@ -1,47 +1,70 @@
 
 # Rapport
 
-Skapade en constrainlayout och sedan la jag in text som jag positionerade med hjälp av
-constraints, t.ex "layout_constraintStart_toEndOf"
-
-Under "Registrera dig" finns det ett "formulär" som egentligen bara har en fråga. formuläret ligger i
-en egen constraintlayout.
-
-Positioneringen av mina element gjorde jag med hjälp av constraints samt margins.
+Skapade en cardview som jag sedan positionerade och la till fler komponenter in i
 
 ```
-Här är koden för min nestlade constraintlayout.
-
-<androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/form"
-        android:layout_width="400dp"
+<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/form_title"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:cardBackgroundColor="@color/colorPrimary"
+        android:layout_margin="16dp">
 
----
-
-Här är koden jag använde för att göra en radiobutton.
-
-<RadioGroup
-            android:id="@+id/radio_gender"
+```
+Exempel på komponenter inne i cardview: Här har vi flera views som ligger i en constraintlayout. "Rubriken" som lyder "TextView" är positionerad med hjälp av layout_marginLeft och layout_marginTop.
+```
+ <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+        
+        <TextView
+            android:id="@+id/card_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/textView4"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="horizontal">
-
-            <RadioButton android:id="@+id/radio_man"
-                android:layout_marginHorizontal="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Man" />
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textColor="@color/colorAccent"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/card_title_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
 ```
 
-![](assignment3sc.png)
+Exempel på komponenter inne i cardview: Här har jag lagt till en edit text ruta och en knapp som man kan klicka på.
+```
+ <EditText
+        android:id="@+id/signIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/card_body_text"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Name" />
+        
+<Button
+        android:id="@+id/signIn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/signIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Button" />
+
+```
+![screenshot_widgets](https://github.com/b21oscpe/mobileapp-programming-widgets/assets/102578165/d2007e07-5ff8-4b70-846c-b81c3501b65c)
 
 Läs gärna:
 
