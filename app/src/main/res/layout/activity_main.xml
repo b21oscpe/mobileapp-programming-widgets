@@ -30,13 +30,13 @@
                     android:id="@+id/card_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="TextView"
+                    android:text="@string/header"
                     android:textColor="@color/colorAccent"
                     android:textSize="21sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/card_title_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
@@ -44,9 +44,10 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="16dp"
+                    android:contentDescription="@string/img_desc"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/ic_launcher_foreground" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,11 +59,12 @@
 
                 <ImageView
                     android:id="@+id/hero_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="194dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/img_desc"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/bishop" />
 
                 <TextView
                     android:id="@+id/card_body_text"
@@ -71,26 +73,28 @@
                     android:textColor="@color/colorAccent"
                     app:layout_constraintTop_toBottomOf="@+id/hero_image"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:text="TextView" />
+                    android:text="@string/img_desc" />
 
                 <EditText
                     android:id="@+id/signIn"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorAccent"
                     android:ems="10"
                     android:inputType="textPersonName"
                     app:layout_constraintTop_toBottomOf="@id/card_body_text"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:text="Name" />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/signIn_button"
+                    android:text="@string/textfield" />
 
                 <Button
                     android:id="@+id/signIn_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/signIn"
+                    app:layout_constraintTop_toBottomOf="@id/card_body_text"
+                    app:layout_constraintStart_toEndOf="@+id/signIn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="Button" />
+                    android:text="@string/sign_in" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
